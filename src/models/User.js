@@ -11,7 +11,8 @@ class User extends Model {
     }
 
     static associate(models) {
-        this.hasMany(models.Adress, { foreignKey: 'user_id', as: 'adresses' })
+        this.hasMany(models.Adress, { foreignKey: 'user_id', as: 'adresses' });// Relacionamento n para 1
+        this.belongsToMany(models.Techs, { foreignKey: 'user_id', through: 'user_techs', as: 'techs' });
     }
 }
 
