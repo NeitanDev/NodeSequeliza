@@ -14,9 +14,9 @@
 
 - Comandos:
 
-> yarn db:create
-> yarn sequelize migration:create --name:create-nome_da_tabela
-> yarn db:migrate
+> yarn db:create / 
+> yarn sequelize migration:create --name:create-nome_da_tabela / 
+> yarn db:migrate 
 
 
 
