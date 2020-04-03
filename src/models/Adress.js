@@ -1,14 +1,18 @@
-const { Model, DataType } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 
 class Adress extends Model {
-    static init(connection){
+    static init(connection) {
         super.init({
-            zipcode: DataType.STRING,
-            street: DataType.STRING,
-            number: DataType.INTEGER,
-        },{
+            zipcode: DataTypes.STRING,
+            street: DataTypes.STRING,
+            number: DataTypes.INTEGER,
+        }, {
             sequelize: connection,
         });
+    }
+
+    static associate(models) {
+        this.belongsTo(models.User, { foreignKey: 'user_id', as: 'user' })
     }
 };
 
